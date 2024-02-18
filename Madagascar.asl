@@ -9,7 +9,7 @@ state("Game"){
 	byte level: 0x206A38; //number of level, 14 when on map
 	//byte level2: 0x22A2F8; //same as level, but 16 in first cutscene (for some reason)
 	//byte load: 0x22ACDC; //1 When in loading screen
-	byte levelUnlocked: 0x21F9AC, 0x368, 0x1C; //It starts in 0, it adds 1 each time you complete a level and the next one unlocks. This happens in the load screen at the end of each level
+	//byte levelUnlocked: 0x21F9AC, 0x368, 0x1C; //It starts in 0, it adds 1 each time you complete a level and the next one unlocks. This happens in the load screen at the end of each level
 	byte movie: "binkw32.dll", 0x54A9C; //1 When playing an outside video file (eg. the initial cutscene)
 }
 
@@ -22,12 +22,14 @@ start{
 
 }
 
+/*
 split{
 	if(current.levelUnlocked > old.levelUnlocked){
 		return (true);
 	}
 
 }
+*/
 
 isLoading{
 	if (current.movie == 1 && current.load == 0){
