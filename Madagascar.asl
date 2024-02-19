@@ -25,8 +25,10 @@ start{
 
 
 split{
-	if(current.levelUnlocked > old.levelUnlocked){
-		return (true);
+	if(old.level != 15){
+		if(current.levelUnlocked > old.levelUnlocked){
+			return (true);
+		}
 	}
 
 }
