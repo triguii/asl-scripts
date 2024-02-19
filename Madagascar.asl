@@ -29,7 +29,7 @@ split{
 		if (current.levelUnlocked > old.levelUnlocked){
 			return (true);
 		}
-		if (current.level == 11 && current.bossHealt <= 0){
+		if (current.level == 11 && current.bossHealth <= 0){
 			return (true);
 		}
 	}
