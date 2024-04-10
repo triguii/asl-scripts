@@ -14,6 +14,12 @@ state("Game"){
 	float bossHealth: 0x21F9AC, 0x678, 0x10, 0x1C; //Final boss health
 }
 
+init{
+	
+	vars.fossaPhase = 0;
+
+}
+
 
 
 start{
@@ -26,14 +32,19 @@ start{
 
 split{
 	if(old.level != 15){
-		if (current.levelUnlocked > old.levelUnlocked){
+		
+		if(current.levelUnlocked > old.levelUnlocked){
 			return (true);
 		}
-                /*
 		if (current.level == 11 && current.bossHealth == 0 && current.load != 0){
-			return (true);
+			if (current.bossHealth < old.bossHealth){
+				vars.fossaPhase = vars.fossaPhase + 1;
+			}
+			
+			if (vars.fossaPhase >= 2){
+				return (true);
+			}
 		}
-                */
 	}
 
 }
