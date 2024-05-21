@@ -29,7 +29,7 @@ start{
 
 }
 
-
+/*
 split{
 	if(old.level != 15){
 		
@@ -48,7 +48,7 @@ split{
 	}
 
 }
-
+*/
 
 isLoading{
 	if (current.movie == 1 && current.load == 0){
